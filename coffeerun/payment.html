@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CoffeeRun Payment</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="container">
+    <div class="panel panel-default">
+        <section>
+            <form data-coffee-order="form" id="paymentForm">
+                <div class="panel panel-body">
+                    <h2>Contact information</h2>
+                    <label for="flavorShot">Title</label>
+                    <select id="nameTitle" class="form-control" name="title">
+                      <option value="">None</option>
+                      <option value="Queen">Queen</option>
+                      <option value="King">King</option>
+                      <option value="Captian">Captian</option>
+                    </select>
+                    <br>
+                    <p>
+                    <label for="name">
+                        <span>Name: </span>
+                        <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                    <input type="text" id="name" name="username">
+                    </p>
+                    <p>
+                    <label for="mail">
+                        <span>E-mail: </span>
+                        <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                    <input type="email" id="mail" name="usermail">
+                    </p>
+                    <p>
+                    <label for="pwd">
+                        <span>Password: </span>
+                        <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                    <input type="password" id="pwd" name="password">
+                    </p>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <div class="panel panel-body">
+                <h2>Payment information</h2>
+                <p>
+                <label for="card">
+                    <span>Card type:</span>
+                </label>
+                <select id="card" name="usercard">
+                    <option value="visa">Visa</option>
+                    <option value="mc">Mastercard</option>
+                    <option value="amex">American Express</option>
+                </select>
+                </p>
+                <p>
+                <label for="number">
+                    <span>Card number:</span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="tel" id="number" name="cardnumber">
+                </p>
+                <p>
+                <label for="date">
+                    <span>Expiration date:</span>
+                    <strong><abbr title="required">*</abbr></strong>
+                    <em>formatted as mm/dd/yyyy</em>
+                </label>
+                <input type="date" id="date" name="expiration">
+                </p>
+         
+                <button onclick="myFunction()"><a href="#ex1" rel="modal:open">Submit Payment</a></button>
+                <div id="ex1" class="modal">
+                    <p id="demo"></p>
+                    <a href="#" rel="modal:close">Close</a>
+                </div>     
+                <p id="demo"></p>
+
+                <script>
+                function myFunction() {
+                document.getElementById("demo").innerHTML = "Thank you for your payment, " + document.getElementById("nameTitle").value + " " + document.getElementById("name").value;
+                }
+                </script>
+            </div>
+        </section>
+    </div>
+    <script src="scripts/formhandler.js" charset="utf-8"></script>
+
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+</body>
